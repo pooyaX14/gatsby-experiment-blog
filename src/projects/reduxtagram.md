@@ -6,6 +6,7 @@ date: "2019-10-24"
 An app through which one can upload pics after logging in and share pic via URL and make comments on the pics.
 Also, delete the individual pics and individual comments.
 
+![Home Page](./home-page.png)
 
 ## Technology covered:
 

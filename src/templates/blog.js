@@ -15,7 +15,6 @@ export const query = graphql`
   `
 
 const Blog = (props) => {
-  console.log("props is ", props)
   return (
     <Layout>
       <h1>{props.data.markdownRemark.frontmatter.title}</h1>
@@ -26,3 +25,26 @@ const Blog = (props) => {
 }
 
 export default Blog;
+
+// Another method to display the data
+
+/* 
+// Write inside the component
+const query = useStaticQuery(graphql`
+    query($slug: String) {
+      markdownRemark(fields: {slug: {eq: $slug } }) {
+        frontmatter {
+          title
+          date
+        }
+        html
+      }
+    }
+  `)
+console.log("query is ", query)
+console.log("props are ", props)
+return (
+  <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+  <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></div>
+)
+*/
